@@ -67,10 +67,8 @@ function ParticleCanvas() {
       ref={canvasRef}
       style={{
         position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
+        top: 0, left: 0,
+        width: "100%", height: "100%",
         pointerEvents: "none",
         zIndex: 0,
       }}
@@ -80,89 +78,177 @@ function ParticleCanvas() {
 
 // ─── PROJECTS DATA ────────────────────────────────────────────────────────────
 const allProjects = [
+  // ── FEATURED ──
+  {
+    name: "InvestIQ",
+    tagline: "Retail Investor Intelligence Platform",
+    desc: "An AI-powered platform built to give retail investors institutional-grade insights — market signals, portfolio analysis, and smart stock recommendations.",
+    stack: ["Python", "FastAPI", "React", "ML", "Finance API"],
+    emoji: "📈",
+    accent: "#63cab7",
+    tags: ["featured", "data", "python", "web"],
+    status: "wip",
+    featured: true,
+    github: "https://github.com/pratyushjha06/Investiq--retail_investor_intelligence",
+    live: null,
+  },
+  {
+    name: "Employee Management System",
+    tagline: "Full-stack HR & Payroll System",
+    desc: "A complete employee management solution with payroll processing, attendance tracking, role-based access control, and a full admin dashboard.",
+    stack: ["React", "Node.js", "MySQL", "Express"],
+    emoji: "👥",
+    accent: "#9b7ee8",
+    tags: ["featured", "web", "data", "python"],
+    status: "wip",
+    featured: true,
+    github: "https://github.com/pratyushjha06/employee-management-system",
+    live: null,
+  },
+  {
+    name: "DockFleet",
+    tagline: "Docker Orchestration & Monitoring Tool",
+    desc: "A developer tool for managing, monitoring, and orchestrating Docker containers with a clean UI, real-time logs, and fleet-level control.",
+    stack: ["Python", "FastAPI", "React", "Docker", "SQLite"],
+    emoji: "🐳",
+    accent: "#e08a5c",
+    tags: ["featured", "web", "python"],
+    status: "wip",
+    featured: true,
+    github: "https://github.com/pratyushjha06/Dockfleet",
+    live: null,
+  },
+
+  // ── OTHER ──
   {
     name: "MannMitra",
-    tagline: "Mental Health Support Platform",
-    desc: "Built accessible frontend with React.js focused on user-friendly design. Implemented interactive UI components for engagement and responsiveness across all devices.",
-    stack: ["React.js", "HTML5", "CSS3", "JavaScript"],
+    tagline: "Mental Health Support App",
+    desc: "A mental wellness companion app offering mood tracking, guided exercises, and AI-based emotional support. Built at a hackathon with a focus on accessibility.",
+    stack: ["React", "Node.js", "MongoDB"],
     emoji: "🧠",
     accent: "#63cab7",
-    tags: ["featured", "web"],
-    status: "done",
-    featured: true,
-    github: "https://github.com/pratyushjha06",
-  },
-  {
-    name: "Employee Payroll System",
-    tagline: "CLI-based HR Management Tool",
-    desc: "Full CRUD employee management with database integration, automated salary calculations, salary slip generation, and modular Python architecture for scalability.",
-    stack: ["Python", "MySQL", "CLI"],
-    emoji: "💼",
-    accent: "#e08a5c",
-    tags: ["featured", "python", "data"],
-    status: "done",
-    featured: true,
-    github: "https://github.com/pratyushjha06",
-  },
-  {
-    name: "InnoVortex Reimagathon",
-    tagline: "School Website Redesign",
-    desc: "Redesigned DUV International School's website as a finalist among 100+ teams at IGDTUW. Improved navigation, responsiveness, and user-centric digital experience.",
-    stack: ["HTML", "CSS", "JavaScript"],
-    emoji: "🏆",
-    accent: "#9b7ee8",
-    tags: ["featured", "web", "hackathon"],
-    status: "done",
-    featured: true,
-    github: "https://github.com/pratyushjha06",
-  },
-  {
-    name: "SWOC Profile Card",
-    tagline: "Open Source UI Component",
-    desc: "Contributed a responsive Profile Card UI component during Social Winter of Code (SWOC) 2026. Focused on clean design, responsiveness, and accessibility.",
-    stack: ["HTML", "CSS", "JavaScript"],
-    emoji: "❄️",
-    accent: "#9b7ee8",
-    tags: ["web", "open-source"],
-    status: "done",
-    featured: false,
-    github: "https://github.com/pratyushjha06",
-  },
-  {
-    name: "SWOC Leaderboard",
-    tagline: "Open Source Ranking UI",
-    desc: "Built a dynamic leaderboard UI component for Social Winter of Code with live-style ranking display, contributor stats, and responsive layout.",
-    stack: ["HTML", "CSS", "JavaScript"],
-    emoji: "📊",
-    accent: "#e06c9b",
-    tags: ["web", "open-source", "data"],
-    status: "done",
-    featured: false,
-    github: "https://github.com/pratyushjha06",
-  },
-  {
-    name: "AI Software Testing Report",
-    tagline: "LMS QA & Bug Documentation",
-    desc: "Tested a Learning Management System as part of the Futred Innovation Studios AI Testing Internship. Documented UI/UX bugs and functional flaws in structured Excel + Forms reports.",
-    stack: ["Excel", "Google Forms", "QA Testing"],
-    emoji: "🤖",
-    accent: "#e08a5c",
-    tags: ["data"],
+    tags: ["web", "hackathon"],
     status: "done",
     featured: false,
     github: null,
+    live: null,
   },
   {
-    name: "Portfolio Website",
-    tagline: "Personal Portfolio ",
-    desc: "This very portfolio built with React.js, Canvas particle animations, 3D tilt cards, dark/light theme toggle, and a fully responsive layout.",
-    stack: ["React.js", "CSS3", "JavaScript", "Canvas API"],
-    emoji: "🌐",
-    accent: "#63cab7",
-    tags: ["web"],
-    status: "live",
+    name: "DUV International School",
+    tagline: "Website Redesign — Innovortex 2.0",
+    desc: "Full redesign of DUV International School's website as part of the Innovortex 2.0 hackathon. Finalist among 100+ teams at IGDTUW. Modern UI, responsive layout, improved UX.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    emoji: "🏫",
+    accent: "#e08a5c",
+    tags: ["web", "hackathon"],
+    status: "done",
     featured: false,
-    github: "https://github.com/pratyushjha06",
+    github: null,
+    live: null,
+  },
+  {
+    name: "Har Ghar Tiranga",
+    tagline: "Government Campaign Web Experience",
+    desc: "A patriotic web experience built for the Har Ghar Tiranga initiative — featuring flag hoisting, citizen participation flow, and awareness content.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    emoji: "🇮🇳",
+    accent: "#9b7ee8",
+    tags: ["web"],
+    status: "done",
+    featured: false,
+    github: null,
+    live: null,
+  },
+  {
+    name: "Duality Project",
+    tagline: "SWOC '26 Open Source Contribution",
+    desc: "Contributed to the Duality open-source project during Social Winter of Code 2026 — bug fixes, feature additions, and documentation improvements.",
+    stack: ["Open Source", "Git", "JavaScript"],
+    emoji: "⚔️",
+    accent: "#63cab7",
+    tags: ["web", "open-source"],
+    status: "done",
+    featured: false,
+    github: "https://github.com/pratyushjha06/SWOC26-Duality-Project",
+    live: null,
+  },
+  {
+    name: "Mini Search Engine",
+    tagline: "Python-based Text Search Engine",
+    desc: "A lightweight search engine built from scratch in Python using TF-IDF ranking, inverted indexing, and keyword tokenization.",
+    stack: ["Python", "NLP", "TF-IDF"],
+    emoji: "🔍",
+    accent: "#e08a5c",
+    tags: ["python", "data"],
+    status: "done",
+    featured: false,
+    github: "https://github.com/pratyushjha06/MiniSearchEngine",
+    live: null,
+  },
+  {
+    name: "Library Management System",
+    tagline: "CLI-based Book & Member Manager",
+    desc: "A complete library management system with book issuing, return tracking, member records, and automated fine calculation.",
+    stack: ["Python", "SQL", "CLI"],
+    emoji: "📚",
+    accent: "#9b7ee8",
+    tags: ["python"],
+    status: "done",
+    featured: false,
+    github: "https://github.com/pratyushjha06/Library-Management-System",
+    live: null,
+  },
+  {
+    name: "Password Generator",
+    tagline: "Secure Password Generator Tool",
+    desc: "A customizable password generator with strength indicators, copy-to-clipboard, and options for length, symbols, and character sets.",
+    stack: ["Python", "Tkinter"],
+    emoji: "🔐",
+    accent: "#63cab7",
+    tags: ["python"],
+    status: "done",
+    featured: false,
+    github: "https://github.com/pratyushjha06/Password-Generator",
+    live: null,
+  },
+  {
+    name: "Crop Recommendation Model",
+    tagline: "ML Model for Smart Agriculture",
+    desc: "A machine learning model that recommends the best crop to grow based on soil nutrients, temperature, humidity, and rainfall data.",
+    stack: ["Python", "Scikit-learn", "Pandas", "ML"],
+    emoji: "🌾",
+    accent: "#e08a5c",
+    tags: ["python", "data"],
+    status: "done",
+    featured: false,
+    github: "https://github.com/pratyushjha06/Crop-Recommendation-Model",
+    live: null,
+  },
+  {
+    name: "Amazon Clone",
+    tagline: "Frontend UI Recreation",
+    desc: "A pixel-perfect Amazon homepage clone built with pure HTML and CSS — responsive layout, navbar, product grid, and footer.",
+    stack: ["HTML", "CSS"],
+    emoji: "🛒",
+    accent: "#9b7ee8",
+    tags: ["web"],
+    status: "done",
+    featured: false,
+    github: "https://github.com/pratyushjha06/Amazon-clone-HTML_CSS",
+    live: null,
+  },
+  {
+    name: "Fruit Prediction Model",
+    tagline: "ML-based Fruit Classifier",
+    desc: "A machine learning classifier that predicts fruit types from feature data using supervised learning algorithms and Scikit-learn.",
+    stack: ["Python", "Scikit-learn", "Pandas", "ML"],
+    emoji: "🍎",
+    accent: "#63cab7",
+    tags: ["python", "data"],
+    status: "done",
+    featured: false,
+    github: "https://github.com/pratyushjha06/Fruit-Prediction-Model",
+    live: null,
   },
 ];
 
@@ -197,13 +283,13 @@ function TiltCard({ children, className = "", style = {} }) {
 // ─── PROJECT CARD ─────────────────────────────────────────────────────────────
 function ProjectCard({ p }) {
   const statusClass =
-    p.status === "live"
-      ? "badge--live"
-      : p.status === "wip"
-      ? "badge--wip"
-      : "badge--done";
+    p.status === "live" ? "badge--live"
+    : p.status === "wip" ? "badge--wip"
+    : "badge--done";
   const statusLabel =
-    p.status === "live" ? "● Live" : p.status === "wip" ? "◐ WIP" : "✓ Done";
+    p.status === "live" ? "● Live"
+    : p.status === "wip" ? "◐ WIP"
+    : "✓ Done";
 
   return (
     <TiltCard
@@ -226,9 +312,7 @@ function ProjectCard({ p }) {
 
       <div className="proj-card__stack">
         {p.stack.map((s) => (
-          <span key={s} className="stack-tag">
-            {s}
-          </span>
+          <span key={s} className="stack-tag">{s}</span>
         ))}
       </div>
 
@@ -274,7 +358,11 @@ function Navbar() {
         <span>Pratyush<span className="accent">.</span></span>
       </Link>
       <div className="navbar__actions">
-        <Link to="/" className="btn btn--ghost" style={{ padding: "8px 18px", fontSize: "0.82rem" }}>
+        <Link
+          to="/"
+          className="btn btn--ghost"
+          style={{ padding: "8px 18px", fontSize: "0.82rem" }}
+        >
           ← Back to Portfolio
         </Link>
         <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">

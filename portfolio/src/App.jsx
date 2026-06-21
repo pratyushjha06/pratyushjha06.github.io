@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-// ─── THEME CONTEXT ───────────────────────────────────────────────────────────
+// ─── THEME CONTEXT ────────────────────────────────────────────────────────────
 const useTheme = () => {
   const [dark, setDark] = useState(true);
   useEffect(() => {
@@ -10,7 +10,7 @@ const useTheme = () => {
   return [dark, () => setDark((d) => !d)];
 };
 
-// ─── PARTICLE CANVAS ─────────────────────────────────────────────────────────
+// ─── PARTICLE CANVAS ──────────────────────────────────────────────────────────
 function ParticleCanvas() {
   const canvasRef = useRef(null);
   useEffect(() => {
@@ -75,7 +75,12 @@ function ParticleCanvas() {
       window.removeEventListener("resize", resize);
     };
   }, []);
-  return <canvas ref={canvasRef} style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }} />;
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}
+    />
+  );
 }
 
 // ─── 3D TILT CARD ─────────────────────────────────────────────────────────────
@@ -85,12 +90,13 @@ function TiltCard({ children, className = "" }) {
     const rect = ref.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    const rx = ((y / rect.height) - 0.5) * -16;
-    const ry = ((x / rect.width) - 0.5) * 16;
+    const rx = (y / rect.height - 0.5) * -16;
+    const ry = (x / rect.width - 0.5) * 16;
     ref.current.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.03)`;
   };
   const handleLeave = () => {
-    ref.current.style.transform = "perspective(700px) rotateX(0deg) rotateY(0deg) scale(1)";
+    ref.current.style.transform =
+      "perspective(700px) rotateX(0deg) rotateY(0deg) scale(1)";
   };
   return (
     <div
@@ -153,7 +159,6 @@ function Navbar({ dark, toggleTheme }) {
             alt="Pratyush Jha"
             className="navbar__avatar-img"
             onError={(e) => {
-              // Fallback to PJ initials if image fails to load
               e.target.style.display = "none";
               e.target.nextSibling.style.display = "flex";
             }}
@@ -164,7 +169,9 @@ function Navbar({ dark, toggleTheme }) {
       </div>
       <div className={`navbar__links ${open ? "open" : ""}`}>
         {links.map((l) => (
-          <a key={l} href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)}>{l}</a>
+          <a key={l} href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)}>
+            {l}
+          </a>
         ))}
       </div>
       <div className="navbar__actions">
@@ -182,22 +189,35 @@ function Navbar({ dark, toggleTheme }) {
 // ─── HERO ─────────────────────────────────────────────────────────────────────
 function Hero() {
   const PROFILE_PIC = "/assets/display-pic.png";
-
   return (
     <section id="about" className="hero">
       <div className="hero__content">
         <p className="hero__greeting">Hello, I'm</p>
         <h1 className="hero__name">Pratyush Jha</h1>
         <h2 className="hero__role">
-          <TypeWriter texts={["Frontend Developer", "Data Science Enthusiast", "Founder @ Cryptivoxe", "CSE Undergrad @ IPU"]} />
+          <TypeWriter
+            texts={[
+              "Frontend Developer",
+              "Data Science Enthusiast",
+              "Founder @ Cryptivoxe",
+              "CSE Undergrad @ IPU",
+            ]}
+          />
         </h2>
         <p className="hero__bio">
-          B.Tech CSE student at IP University · Building digital products, solving real problems,
-          and obsessing over clean interfaces &amp; meaningful data.
+          B.Tech CSE student at IP University · Building digital products, solving real
+          problems, and obsessing over clean interfaces &amp; meaningful data.
         </p>
         <div className="hero__cta">
           <a href="#projects" className="btn btn--primary">View Projects</a>
-          <a href="https://linkedin.com/in/pratyushjha06" target="_blank" rel="noreferrer" className="btn btn--ghost">Let's Connect</a>
+          <a
+            href="https://linkedin.com/in/pratyushjha06"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn--ghost"
+          >
+            Let's Connect
+          </a>
         </div>
         <div className="hero__socials">
           <a href="https://github.com/pratyushjha06" target="_blank" rel="noreferrer" className="social-pill">GitHub</a>
@@ -206,7 +226,6 @@ function Hero() {
         </div>
       </div>
 
-      {/* ─── HERO VISUAL: Real Photo with rings ─── */}
       <div className="hero__visual">
         <div className="avatar-ring">
           <div className="avatar-inner avatar-inner--photo">
@@ -219,7 +238,6 @@ function Hero() {
                 e.target.nextSibling.style.display = "flex";
               }}
             />
-            {/* Fallback initials if image not found */}
             <span className="avatar-initials-fallback">PJ</span>
           </div>
           <div className="ring ring1" />
@@ -231,7 +249,7 @@ function Hero() {
   );
 }
 
-// ─── SKILLS ───────────────────────────────────────────────────────────────────
+// ─── SKILLS DATA ──────────────────────────────────────────────────────────────
 const skillGroups = [
   {
     label: "Languages",
@@ -301,13 +319,11 @@ const skillGroups = [
   },
 ];
 
-// ─── SKILLS ───────────────────────────────────────────────────────────────────
-// Level config — controls fill width + dot color
 const LEVEL_CONFIG = {
-  Beginner: { width: "25%", dotCount: 1 },
-  Intermediate: { width: "60%", dotCount: 2 },
-  Advanced: { width: "88%", dotCount: 3 },
-  Expert: { width: "100%", dotCount: 4 },
+  Beginner:     { width: "25%",  dotCount: 1 },
+  Intermediate: { width: "60%",  dotCount: 2 },
+  Advanced:     { width: "88%",  dotCount: 3 },
+  Expert:       { width: "100%", dotCount: 4 },
 };
 
 function SkillBar({ name, level, color, delay = 0 }) {
@@ -329,7 +345,6 @@ function SkillBar({ name, level, color, delay = 0 }) {
       <div className="skill-bar-header">
         <span className="skill-bar-name">{name}</span>
         <div className="skill-bar-label" style={{ "--bar-color": color }}>
-          {/* Dot indicators */}
           <span className="skill-dots">
             {[1, 2, 3, 4].map((n) => (
               <span
@@ -371,7 +386,6 @@ function Skills() {
         <h2 className="section__title">Skills & Technologies</h2>
       </div>
 
-      {/* ── Tab Selector ── */}
       <div className="skills-tabs">
         {skillGroups.map((g, i) => (
           <button
@@ -386,7 +400,6 @@ function Skills() {
         ))}
       </div>
 
-      {/* ── Active Panel ── */}
       <TiltCard className="skills-panel glass-card" key={active}>
         <div className="skills-panel__header">
           <span className="skills-panel__icon">{group.icon}</span>
@@ -408,15 +421,10 @@ function Skills() {
         </div>
       </TiltCard>
 
-      {/* ── Skill Pills Overview ── */}
       <div className="skills-all-pills">
         {skillGroups.map((g) =>
           g.items.map((item) => (
-            <span
-              key={item.name}
-              className="skills-pill"
-              style={{ "--pill-color": g.color }}
-            >
+            <span key={item.name} className="skills-pill" style={{ "--pill-color": g.color }}>
               {item.name}
             </span>
           ))
@@ -426,34 +434,37 @@ function Skills() {
   );
 }
 
-// ─── PROJECTS ─────────────────────────────────────────────────────────────────
+// ─── PROJECTS (Top 3 Featured) ────────────────────────────────────────────────
 const projects = [
   {
-    name: "MannMitra",
-    tagline: "Mental Health Support Platform",
-    desc: "Built accessible frontend with React.js focused on user-friendly design. Implemented interactive UI components for engagement and responsiveness across all devices.",
-    stack: ["React.js", "HTML", "CSS", "JavaScript"],
+    name: "InvestIQ",
+    tagline: "Retail Investor Intelligence Platform",
+    desc: "An AI-powered platform giving retail investors institutional-grade insights — market signals, portfolio analysis, and smart stock recommendations.",
+    stack: ["Python", "FastAPI", "React", "ML", "Finance API"],
     color: "#63cab7",
-    emoji: "🧠",
-    links: { github: "https://github.com/pratyushjha06" },
+    emoji: "📈",
+    status: "wip",
+    links: { github: "https://github.com/pratyushjha06/Investiq--retail_investor_intelligence" },
   },
   {
-    name: "Employee Payroll System",
-    tagline: "CLI-based HR Management Tool",
-    desc: "Full CRUD employee management with database integration, automated salary calculations, salary slip generation, and modular Python architecture for scalability.",
-    stack: ["Python", "MySQL", "CLI"],
-    color: "#e08a5c",
-    emoji: "💼",
-    links: { github: "https://github.com/pratyushjha06" },
-  },
-  {
-    name: "InnoVortex Reimagathon",
-    tagline: "School Website Redesign",
-    desc: "Redesigned DUV International School's website as a finalist among 100+ teams. Improved navigation, responsiveness, and user-centric digital experience.",
-    stack: ["HTML", "CSS", "JavaScript"],
+    name: "Employee Management System",
+    tagline: "Full-stack HR & Payroll System",
+    desc: "Complete employee management with payroll processing, attendance tracking, role-based access control, and an admin dashboard.",
+    stack: ["React", "Node.js", "MySQL", "Express"],
     color: "#9b7ee8",
-    emoji: "🏆",
-    links: { github: "https://github.com/pratyushjha06" },
+    emoji: "👥",
+    status: "wip",
+    links: { github: "https://github.com/pratyushjha06/employee-management-system" },
+  },
+  {
+    name: "DockFleet",
+    tagline: "Docker Orchestration & Monitoring Tool",
+    desc: "A developer tool for managing, monitoring, and orchestrating Docker containers with real-time logs and fleet-level control.",
+    stack: ["Python", "FastAPI", "React", "Docker", "SQLite"],
+    color: "#e08a5c",
+    emoji: "🐳",
+    status: "wip",
+    links: { github: "https://github.com/pratyushjha06/Dockfleet" },
   },
 ];
 
@@ -469,7 +480,20 @@ function Projects() {
           <TiltCard key={p.name} className="project-card glass-card">
             <div className="project-card__top" style={{ "--accent": p.color }}>
               <span className="project-emoji">{p.emoji}</span>
-              <div className="project-card__dot" style={{ background: p.color }} />
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <span
+                  className={`proj-badge ${
+                    p.status === "wip"
+                      ? "badge--wip"
+                      : p.status === "live"
+                      ? "badge--live"
+                      : "badge--done"
+                  }`}
+                >
+                  {p.status === "wip" ? "◐ WIP" : p.status === "live" ? "● Live" : "✓ Done"}
+                </span>
+                <div className="project-card__dot" style={{ background: p.color }} />
+              </div>
             </div>
             <h3 className="project-card__name">{p.name}</h3>
             <p className="project-card__tagline">{p.tagline}</p>
@@ -478,7 +502,14 @@ function Projects() {
               {p.stack.map((s) => <span key={s} className="stack-tag">{s}</span>)}
             </div>
             <div className="project-links">
-              <a href={p.links.github} target="_blank" rel="noreferrer" className="project-link">GitHub →</a>
+              <a
+                href={p.links.github}
+                target="_blank"
+                rel="noreferrer"
+                className="project-link"
+              >
+                GitHub →
+              </a>
             </div>
           </TiltCard>
         ))}
@@ -487,14 +518,13 @@ function Projects() {
         <Link to="/projects" className="btn btn--ghost">
           View All Projects →
         </Link>
-        <span className="projects-cta-note">7 projects total</span>
+        <span className="projects-cta-note">13 projects total</span>
       </div>
-
     </section>
   );
 }
 
-// ─── EXPERIENCE ───────────────────────────────────────────────────────────────
+// ─── EXPERIENCE DATA ──────────────────────────────────────────────────────────
 const experiences = [
   {
     role: "Founder (Early Stage)",
@@ -611,11 +641,8 @@ function Experience() {
             className={`timeline-item ${active === i ? "timeline-item--open" : ""}`}
             onClick={() => setActive(active === i ? null : i)}
           >
-            {/* Connector dot */}
             <div className="timeline-dot" style={{ background: e.color }} />
-
             <div className="timeline-content glass-card">
-              {/* ── Header Row ── */}
               <div className="timeline-header">
                 <div className="timeline-left">
                   <span className="timeline-emoji">{e.emoji}</span>
@@ -631,14 +658,10 @@ function Experience() {
                   <span className="timeline-period">{e.period}</span>
                   <span className="timeline-duration">{e.duration}</span>
                   <span className="timeline-tag" style={{ "--tag-color": e.color }}>{e.tag}</span>
-                  {e.paid && (
-                    <span className="timeline-paid">💰 Paid</span>
-                  )}
+                  {e.paid && <span className="timeline-paid">💰 Paid</span>}
                   <span className="timeline-chevron">{active === i ? "▲" : "▼"}</span>
                 </div>
               </div>
-
-              {/* ── Expandable Points ── */}
               <div className={`timeline-body ${active === i ? "timeline-body--open" : ""}`}>
                 <ul className="timeline-points">
                   {e.points.map((pt, j) => (
@@ -654,34 +677,146 @@ function Experience() {
   );
 }
 
-// ─── ACHIEVEMENTS ─────────────────────────────────────────────────────────────
+// ─── ACHIEVEMENTS DATA ────────────────────────────────────────────────────────
 const achievements = [
-  { icon: "🥈", title: "2nd Place — Code Tiranga & Web Styledown", org: "XIM University ACM", year: "2025" },
-  { icon: "🥉", title: "3rd Place (Team) + Certificate of Coding Excellence", org: "CODEIGNITER-2025, Delhi Technical Campus", year: "2025" },
-  { icon: "🏅", title: "Finalist among 100+ teams — InnoVortex 2.0 / Reimagathon", org: "IGDTUW", year: "2024" },
-  { icon: "⭐", title: "5★ SQL — HackerRank", org: "HackerRank", year: "2025" },
-  { icon: "📜", title: "Data Visualisation: Empowering Business with Effective Insights", org: "Tata via Forage", year: "2025" },
+  {
+    icon: "🥈",
+    type: "award",
+    title: "2nd Place — Code Tiranga & Web Styledown",
+    org: "XIM University ACM",
+    year: "2025",
+    color: "#63cab7",
+    cert: "/assets/Certificate/XIM har ghar tiranga.png",
+    desc: "Competed against top coders nationally in a dual-track event covering competitive coding and web design.",
+  },
+  {
+    icon: "🥉",
+    type: "award",
+    title: "3rd Place + Certificate of Coding Excellence",
+    org: "CODEIGNITER-2025, Delhi Technical Campus",
+    year: "2025",
+    color: "#e08a5c",
+    cert: null,
+    desc: "Team achievement at a national-level coding competition with 200+ participants.",
+  },
+  {
+    icon: "🏅",
+    type: "award",
+    title: "Finalist — InnoVortex 2.0 / Reimagathon",
+    org: "IGDTUW",
+    year: "2024",
+    color: "#9b7ee8",
+    cert: null,
+    desc: "Selected as finalist among 100+ teams for a school website redesign challenge.",
+  },
+  {
+    icon: "⭐",
+    type: "badge",
+    title: "5★ SQL",
+    org: "HackerRank",
+    year: "2025",
+    color: "#63cab7",
+    cert: null,
+    desc: "Achieved the highest rating on HackerRank SQL track — top percentile globally.",
+  },
+  {
+    icon: "📜",
+    type: "cert",
+    title: "Data Visualisation: Empowering Business with Effective Insights",
+    org: "Tata via Forage",
+    year: "2025",
+    color: "#e08a5c",
+    cert: null, // add "/assets/certs/tata-forage.jpg" when ready
+    desc: "Completed a virtual job simulation analysing real business data and creating impactful dashboards.",
+  },
 ];
 
+// ─── ACHIEVEMENTS ─────────────────────────────────────────────────────────────
 function Achievements() {
+  const [selected, setSelected] = useState(null);
+  const [lightbox, setLightbox] = useState(null);
+
+  const awards   = achievements.filter((a) => a.type === "award");
+  const certs    = achievements.filter((a) => a.type === "cert");
+  const badges   = achievements.filter((a) => a.type === "badge");
+
+  const typeLabel = { award: "🏆 Award", cert: "📜 Certificate", badge: "⭐ Badge" };
+
   return (
     <section id="achievements" className="section">
       <div className="section__header">
         <span className="section__tag">Recognition</span>
         <h2 className="section__title">Achievements</h2>
       </div>
-      <div className="achievements-grid">
-        {achievements.map((a, i) => (
-          <TiltCard key={i} className="achievement-card glass-card">
-            <span className="achievement-icon">{a.icon}</span>
-            <div className="achievement-body">
-              <p className="achievement-title">{a.title}</p>
-              <p className="achievement-org">{a.org}</p>
-            </div>
-            <span className="achievement-year">{a.year}</span>
-          </TiltCard>
+
+      {/* ── Big stat bar ── */}
+      <div className="ach-stats">
+        {[
+          { num: awards.length,  label: "Awards",       color: "#63cab7"  },
+          { num: certs.length,   label: "Certificates", color: "#e08a5c"  },
+          { num: badges.length,  label: "Badges",       color: "#9b7ee8"  },
+          { num: achievements.length, label: "Total",   color: "#e06c9b"  },
+        ].map((s) => (
+          <div key={s.label} className="ach-stat glass-card">
+            <span className="ach-stat__num" style={{ color: s.color }}>{s.num}</span>
+            <span className="ach-stat__label">{s.label}</span>
+          </div>
         ))}
       </div>
+
+      {/* ── Cards grid ── */}
+      <div className="ach-grid">
+        {achievements.map((a, i) => (
+          <div
+            key={i}
+            className={`ach-card glass-card ${selected === i ? "ach-card--open" : ""}`}
+            style={{ "--ach-color": a.color }}
+            onClick={() => setSelected(selected === i ? null : i)}
+          >
+            {/* Top stripe */}
+            <div className="ach-card__stripe" />
+
+            <div className="ach-card__top">
+              <span className="ach-card__icon">{a.icon}</span>
+              <span className="ach-card__type-badge">{typeLabel[a.type]}</span>
+            </div>
+
+            <h3 className="ach-card__title">{a.title}</h3>
+            <p className="ach-card__org" style={{ color: a.color }}>{a.org}</p>
+
+            {/* Expandable desc */}
+            <div className={`ach-card__body ${selected === i ? "ach-card__body--open" : ""}`}>
+              <p className="ach-card__desc">{a.desc}</p>
+              {a.cert ? (
+                <button
+                  className="ach-cert-btn"
+                  style={{ "--ach-color": a.color }}
+                  onClick={(e) => { e.stopPropagation(); setLightbox(a.cert); }}
+                >
+                  View Certificate →
+                </button>
+              ) : (
+                <span className="ach-cert-placeholder">📎 Certificate coming soon</span>
+              )}
+            </div>
+
+            <div className="ach-card__footer">
+              <span className="ach-card__year">{a.year}</span>
+              <span className="ach-card__chevron">{selected === i ? "▲" : "▼"}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Lightbox ── */}
+      {lightbox && (
+        <div className="ach-lightbox" onClick={() => setLightbox(null)}>
+          <div className="ach-lightbox__inner" onClick={(e) => e.stopPropagation()}>
+            <button className="ach-lightbox__close" onClick={() => setLightbox(null)}>✕</button>
+            <img src={lightbox} alt="Certificate" className="ach-lightbox__img" />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
@@ -700,10 +835,10 @@ function Contact() {
       </p>
       <div className="contact-cards">
         {[
-          { label: "Email", value: "pratyushjha06@gmail.com", href: "mailto:pratyushjha06@gmail.com", icon: "✉" },
-          { label: "LinkedIn", value: "pratyushjha06", href: "https://linkedin.com/in/pratyushjha06", icon: "💼" },
-          { label: "GitHub", value: "pratyushjha06", href: "https://github.com/pratyushjha06", icon: "⌥" },
-          { label: "Discord", value: "pratyushjha1161", href: "#", icon: "🎮" },
+          { label: "Email",    value: "pratyushjha06@gmail.com", href: "mailto:pratyushjha06@gmail.com",          icon: "✉" },
+          { label: "LinkedIn", value: "pratyushjha06",           href: "https://linkedin.com/in/pratyushjha06",   icon: "💼" },
+          { label: "GitHub",   value: "pratyushjha06",           href: "https://github.com/pratyushjha06",        icon: "⌥" },
+          { label: "Discord",  value: "pratyushjha1161",         href: "#",                                        icon: "🎮" },
         ].map((c) => (
           <a key={c.label} href={c.href} target="_blank" rel="noreferrer" className="contact-card glass-card">
             <span className="contact-icon">{c.icon}</span>
