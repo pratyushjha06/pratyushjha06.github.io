@@ -274,6 +274,15 @@ function Navbar({ dark, toggleTheme }) {
             {l}
           </a>
         ))}
+
+        <a
+        href="/public/assets/resume.pdf"
+        target="_blank"
+        rel="noreferrer"
+        className="nav-resume"
+      >
+        Resume
+      </a>
       </div>
 
       <div className="navbar__actions">
@@ -321,9 +330,10 @@ function Hero() {
             <h2 className="hero__role">
               <TypeWriter
                 texts={[
-                  "Frontend Developer",
-                  "Data Science Enthusiast",
+                  "Data Analyst",
+                  "Aspiring Data Engineer",
                   "Founder @ Cryptivoxe",
+                  "Frontend Developer",
                   "CSE Undergrad @ IPU",
                 ]}
               />
@@ -1143,7 +1153,7 @@ const achievements = [
     org: "FOSS Hack",
     year: 2026,
     color: "#63cab7",
-    cert: null,
+    cert: "/public/assets/certificate/foss-hack-2026.png",
     desc: "Won FOSS Hack 2026 for building and presenting DOCKFLEET.",
   },
   {
@@ -1153,7 +1163,7 @@ const achievements = [
     org: "XIM University ACM",
     year: 2025,
     color: "#63cab7",
-    cert: "assets/Certificate_XIM_har_ghar_tiranga.png",
+    cert: "/public/assets/certificate/XIM-har-ghar-tiranga.png",
     desc: "Won 2nd place in Code Tiranga at XIM University ACM.",
   },
   {
@@ -1163,28 +1173,69 @@ const achievements = [
     org: "XIM University ACM",
     year: 2024,
     color: "#e08a5c",
-    cert: null,
+    cert: "/public/assets/certificate/CSS Styling Event XIM.png",
     desc: "Participated in Web Styledown focused on web design and styling.",
   },
   {
     icon: <FaTrophy />,
     type: "award",
-    title: "3rd Place Certificate of Coding Excellence",
+    title: "3rd Place Certificate & Coding Excellence",
     org: "CODEIGNITER-2025, Delhi Technical Campus",
     year: 2025,
     color: "#e08a5c",
-    cert: null,
-    desc: "Team achievement at a national-level coding competition with 200+ participants.",
+    cert: "/public/assets/certificate/Codeigniter excellence coding.jpg",
+    certificate: "/public/assets/certificate/Codeigniter excellence coding.jpg",
+    desc: "Team achievement at a coding competition with 200+ participants.",
   },
   {
-    icon: <FaTrophy />,
-    type: "award",
+    icon: <FaCertificate />,
+    type: "cert",
+    title: "BCG - Introduction to Data for Decision Makers Job Simulation",
+    org: "Forage",
+    year: 2026,
+    color: "#63cab7",
+    cert: "/public/assets/certificate/BCG X - Introduction to Data for Decision Makers Job.png",
+    desc: "Completed BCG's Introduction to Data for Decision Makers job simulation on Forage, focused on data analysis and Microsoft Excel.",
+  },
+  {
+    icon: <FaCertificate />,
+    type: "cert",
+    title: "Deloitte Australia - Data Analytics Job Simulation",
+    org: "Forage",
+    year: 2026,
+    color: "#e08a5c",
+    cert: "/public/assets/certificate/deloitte - certificate.png",
+    desc: "Completed Deloitte Australia's Data Analytics job simulation on Forage, focused on data analysis and Tableau.",
+  },
+  {
+    icon: <FaCertificate />,
+    type: "cert",
+    title: "Data Visualisation: Empowering Business with Effective Insights",
+    org: "Tata via Forage",
+    year: 2025,
+    color: "#e08a5c",
+    cert: "/public/assets/certificate/tata - certificate.png",
+    desc: "Completed a virtual job simulation analysing real business data and creating impactful dashboards.",
+  },
+    {
+    icon: <FaCertificate />,
+    type: "cert",
     title: "Finalist InnoVortex 2.0 Reimagathon",
     org: "IGDTUW",
     year: 2024,
     color: "#9b7ee8",
-    cert: null,
+    cert: "/public/assets/certificate/Innovertex2.0.png",
     desc: "Selected as finalist among 100+ teams for a school website redesign challenge.",
+  },
+  {
+    icon: <FaCertificate />,
+    type: "cert",
+    title: "AI for Youth Program – Crop Recommender",
+    org: "Intel Digital Readiness / CBSE",
+    year: 2021,
+    color: "#e06c9b",
+    cert: "/public/assets/certificate/intel - crop_recommender.png",
+    desc: "Completed the AI for Youth Program and built a crop recommender model to help farmers predict suitable crops using soil and weather-related factors.",
   },
   {
     icon: <FaCode />,
@@ -1195,36 +1246,6 @@ const achievements = [
     color: "#63cab7",
     cert: null,
     desc: "Achieved the highest rating on HackerRank SQL track.",
-  },
-  {
-    icon: <FaCertificate />,
-    type: "cert",
-    title: "BCG - Introduction to Data for Decision Makers Job Simulation",
-    org: "Forage",
-    year: 2026,
-    color: "#63cab7",
-    cert: null,
-    desc: "Completed BCG's Introduction to Data for Decision Makers job simulation on Forage, focused on data analysis and Microsoft Excel.",
-  },
-  {
-    icon: <FaCertificate />,
-    type: "cert",
-    title: "Deloitte Australia - Data Analytics Job Simulation",
-    org: "Forage",
-    year: 2026,
-    color: "#e08a5c",
-    cert: null,
-    desc: "Completed Deloitte Australia's Data Analytics job simulation on Forage, focused on data analysis and Tableau.",
-  },
-  {
-    icon: <FaCertificate />,
-    type: "cert",
-    title: "Data Visualisation: Empowering Business with Effective Insights",
-    org: "Tata via Forage",
-    year: 2025,
-    color: "#e08a5c",
-    cert: null,
-    desc: "Completed a virtual job simulation analysing real business data and creating impactful dashboards.",
   },
 ];
 
