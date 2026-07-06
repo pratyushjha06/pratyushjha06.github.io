@@ -23,7 +23,7 @@ import {
   FaGlobe,
   FaUsers,
   FaCodeBranch,
-   FaCoffee,
+  FaCoffee,
 } from "react-icons/fa";
 
 import { FaIndianRupeeSign } from "react-icons/fa6";
@@ -341,6 +341,16 @@ function Hero() {
           <a href="#projects" className="btn btn--primary">
             View Projects
           </a>
+
+          <a
+            href="/public/assets/resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn--secondary"
+          >
+            View Resume
+          </a>
+
           <a
             href="https://linkedin.com/in/pratyushjha06"
             target="_blank"
@@ -1127,35 +1137,35 @@ function Experience() {
 
 const achievements = [
   {
-  icon: <FaTrophy />,
-  type: "award",
-  title: "Winner - FOSS Hack 2026",
-  org: "FOSS Hack",
-  year: 2026,
-  color: "#63cab7",
-  cert: null,
-  desc: "Won FOSS Hack 2026 for building and presenting DOCKFLEET.",
-},
-{
-  icon: <FaTrophy />,
-  type: "award",
-  title: "2nd Place - Code Tiranga",
-  org: "XIM University ACM",
-  year: 2025,
-  color: "#63cab7",
-  cert: "assets/Certificate_XIM_har_ghar_tiranga.png",
-  desc: "Won 2nd place in Code Tiranga at XIM University ACM.",
-},
-{
-  icon: <FaTrophy />,
-  type: "award",
-  title: "2nd Place - Web Styledown",
-  org: "XIM University ACM",
-  year: 2024,
-  color: "#e08a5c",
-  cert: null,
-  desc: "Participated in Web Styledown focused on web design and styling.",
-},
+    icon: <FaTrophy />,
+    type: "award",
+    title: "Winner - FOSS Hack 2026",
+    org: "FOSS Hack",
+    year: 2026,
+    color: "#63cab7",
+    cert: null,
+    desc: "Won FOSS Hack 2026 for building and presenting DOCKFLEET.",
+  },
+  {
+    icon: <FaTrophy />,
+    type: "award",
+    title: "2nd Place - Code Tiranga",
+    org: "XIM University ACM",
+    year: 2025,
+    color: "#63cab7",
+    cert: "assets/Certificate_XIM_har_ghar_tiranga.png",
+    desc: "Won 2nd place in Code Tiranga at XIM University ACM.",
+  },
+  {
+    icon: <FaTrophy />,
+    type: "award",
+    title: "2nd Place - Web Styledown",
+    org: "XIM University ACM",
+    year: 2024,
+    color: "#e08a5c",
+    cert: null,
+    desc: "Participated in Web Styledown focused on web design and styling.",
+  },
   {
     icon: <FaTrophy />,
     type: "award",
@@ -1187,25 +1197,25 @@ const achievements = [
     desc: "Achieved the highest rating on HackerRank SQL track.",
   },
   {
-  icon: <FaCertificate />,
-  type: "cert",
-  title: "BCG - Introduction to Data for Decision Makers Job Simulation",
-  org: "Forage",
-  year: 2026,
-  color: "#63cab7",
-  cert: null,
-  desc: "Completed BCG's Introduction to Data for Decision Makers job simulation on Forage, focused on data analysis and Microsoft Excel.",
-},
-{
-  icon: <FaCertificate />,
-  type: "cert",
-  title: "Deloitte Australia - Data Analytics Job Simulation",
-  org: "Forage",
-  year: 2026,
-  color: "#e08a5c",
-  cert: null,
-  desc: "Completed Deloitte Australia's Data Analytics job simulation on Forage, focused on data analysis and Tableau.",
-},
+    icon: <FaCertificate />,
+    type: "cert",
+    title: "BCG - Introduction to Data for Decision Makers Job Simulation",
+    org: "Forage",
+    year: 2026,
+    color: "#63cab7",
+    cert: null,
+    desc: "Completed BCG's Introduction to Data for Decision Makers job simulation on Forage, focused on data analysis and Microsoft Excel.",
+  },
+  {
+    icon: <FaCertificate />,
+    type: "cert",
+    title: "Deloitte Australia - Data Analytics Job Simulation",
+    org: "Forage",
+    year: 2026,
+    color: "#e08a5c",
+    cert: null,
+    desc: "Completed Deloitte Australia's Data Analytics job simulation on Forage, focused on data analysis and Tableau.",
+  },
   {
     icon: <FaCertificate />,
     type: "cert",
