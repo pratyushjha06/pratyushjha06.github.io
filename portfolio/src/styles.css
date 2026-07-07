@@ -34,18 +34,28 @@
 }
 
 [data-theme="light"] {
-  --bg: #f8fafc;
-  --bg2: #ffffff;
-  --bg3: #f1f5f9;
-  --surface: rgba(255, 255, 255, 0.85);
-  --surface-hover: rgba(241, 245, 249, 0.95);
-  --border: rgba(10, 90, 110, 0.1);
-  --border-light: rgba(0, 0, 0, 0.06);
-  --text: #0f172a;
-  --text-muted: #64748b;
-  --text-dim: #94a3b8;
-  --glow: rgba(10, 90, 110, 0.04);
-  --panel-accent: rgba(10, 90, 110, 0.12);
+  --bg: #f6efe7;            
+  --bg2: #fffaf4;           
+  --bg3: #ede0d4;           
+  --surface: rgba(255, 250, 244, 0.88);
+  --surface-hover: rgba(245, 236, 227, 0.96);
+
+  --text: #2f241d;          
+  --text-muted: #6f5a4b;    
+  --text-dim: #a18876;      
+
+  --border: rgba(111, 90, 75, 0.12);
+  --border-light: rgba(79, 60, 47, 0.10);
+
+  --accent: #7b4f35;        
+  --accent2: #b87444;      
+  --accent3: #8b6f5c;       
+  --accent4: #a65d57;     
+
+  --glow: rgba(123, 79, 53, 0.10);
+  --panel-accent: rgba(123, 79, 53, 0.14);
+
+  --shadow: 0 10px 24px rgba(84, 58, 41, 0.10);
 }
 
 /* ─── RESET ──────────────────────────────────────────────────────────────── */
@@ -1920,4 +1930,169 @@ a { color: inherit; text-decoration: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+/* ─── LIGHT MODE OVERRIDES ───────────────────────────────────────── */
+[data-theme="light"] .navbar {
+  background: rgba(246, 239, 231, 0.82);
+  border-bottom: 1px solid rgba(79, 60, 47, 0.10);
+  box-shadow: 0 10px 30px rgba(84, 58, 41, 0.05);
+}
+
+[data-theme="light"] .navbar__resume-link {
+  background: rgba(123, 79, 53, 0.08);
+  border-color: rgba(123, 79, 53, 0.16);
+  color: var(--accent);
+}
+
+[data-theme="light"] .navbar__resume-link:hover {
+  background: rgba(123, 79, 53, 0.14);
+  border-color: rgba(123, 79, 53, 0.28);
+}
+
+[data-theme="light"] .theme-toggle {
+  background: rgba(255, 250, 244, 0.95);
+  border: 1px solid rgba(123, 79, 53, 0.18);
+  color: var(--accent);
+  box-shadow:
+    0 0 0 1px rgba(123, 79, 53, 0.05),
+    0 8px 18px rgba(123, 79, 53, 0.08);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  border-color: rgba(123, 79, 53, 0.34);
+  color: #5f3c27;
+}
+
+[data-theme="light"] .hero__terminal {
+  background: #fff8f1;
+  border-color: rgba(111, 90, 75, 0.14);
+  box-shadow: 0 14px 34px rgba(84, 58, 41, 0.10);
+}
+
+[data-theme="light"] .terminal-header {
+  background: #f1e3d6;
+  border-bottom: 1px solid rgba(111, 90, 75, 0.10);
+}
+
+[data-theme="light"] .terminal-header::after {
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .hero__role {
+  color: var(--accent2);
+}
+
+[data-theme="light"] .hero__role::before {
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .btn--primary {
+  color: #fffaf4;
+  box-shadow: 0 0 14px rgba(123, 79, 53, 0.16);
+}
+
+[data-theme="light"] .btn--primary:hover {
+  background: transparent;
+  color: var(--accent);
+  box-shadow: 0 0 14px rgba(123, 79, 53, 0.12);
+}
+
+[data-theme="light"] .btn--ghost:hover,
+[data-theme="light"] .social-pill:hover {
+  background: rgba(123, 79, 53, 0.07);
+}
+
+[data-theme="light"] .avatar-inner {
+  background: linear-gradient(135deg, #c08a5b 0%, #7b4f35 100%);
+  color: #fffaf4;
+  box-shadow: 0 0 28px rgba(123, 79, 53, 0.18);
+}
+
+[data-theme="light"] .ring {
+  border-color: rgba(123, 79, 53, 0.16);
+}
+
+[data-theme="light"] .ring2 {
+  border-color: rgba(166, 93, 87, 0.16);
+}
+
+[data-theme="light"] .ring3 {
+  border-color: rgba(184, 116, 68, 0.14);
+}
+
+[data-theme="light"] .skills-tab {
+  background: rgba(255, 248, 241, 0.95);
+  color: var(--text-muted);
+  border-color: rgba(111, 90, 75, 0.12);
+}
+
+[data-theme="light"] .skills-tab:hover {
+  color: var(--text);
+  background: rgba(123, 79, 53, 0.06);
+  border-color: rgba(123, 79, 53, 0.22);
+}
+
+[data-theme="light"] .skills-panel__count,
+[data-theme="light"] .skills-pill-group__label,
+[data-theme="light"] .skills-pill-group__count,
+[data-theme="light"] .skills-radar__label,
+[data-theme="light"] .skills-profile-stat__label,
+[data-theme="light"] .skills-profile-focus__label {
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .skill-bar-name,
+[data-theme="light"] .skills-profile-card__title,
+[data-theme="light"] .skills-profile-stat__value,
+[data-theme="light"] .skills-profile-focus__card h4,
+[data-theme="light"] .skills-profile-tags .skills-pill {
+  color: var(--text);
+}
+
+[data-theme="light"] .skills-radar {
+  background:
+    linear-gradient(rgba(111, 90, 75, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111, 90, 75, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-color: #f3e8dc;
+  border-color: rgba(111, 90, 75, 0.12);
+}
+
+[data-theme="light"] .skills-radar__grid,
+[data-theme="light"] .skills-radar__axis {
+  stroke: rgba(111, 90, 75, 0.14);
+}
+
+[data-theme="light"] .skills-radar__shape {
+  fill: rgba(123, 79, 53, 0.10);
+  stroke: #7b4f35;
+  filter: drop-shadow(0 0 8px rgba(123, 79, 53, 0.12));
+}
+
+[data-theme="light"] .skills-profile-stat {
+  background: #f7ede2;
+  border-color: rgba(111, 90, 75, 0.10);
+}
+
+[data-theme="light"] .skills-profile-focus__card {
+  background: color-mix(in srgb, var(--focus-color) 10%, #fff8f1);
+}
+
+[data-theme="light"] .skill-bar-track {
+  background: linear-gradient(90deg, rgba(123, 79, 53, 0.04), rgba(166, 137, 118, 0.18));
+  border-color: rgba(111, 90, 75, 0.10);
+}
+
+[data-theme="light"] .ach-lightbox {
+  background: rgba(49, 36, 28, 0.72);
+}
+
+[data-theme="light"] .ach-lightbox__inner {
+  box-shadow: 0 0 34px rgba(123, 79, 53, 0.20);
+  border-color: rgba(255, 250, 244, 0.35);
+}
+
+[data-theme="light"] .support-qr img {
+  background: #fffaf4;
 }
