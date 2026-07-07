@@ -276,7 +276,7 @@ function Navbar({ dark, toggleTheme }) {
         ))}
 
         <a
-        href="/public/assets/resume.pdf"
+        href="assets/Resume.pdf"
         target="_blank"
         rel="noreferrer"
         className="nav-resume"
@@ -353,7 +353,7 @@ function Hero() {
           </a>
 
           <a
-            href="/public/assets/resume.pdf"
+            href="assets/Resume.pdf"
             target="_blank"
             rel="noreferrer"
             className="btn btn--secondary"
@@ -1153,7 +1153,7 @@ const achievements = [
     org: "FOSS Hack",
     year: 2026,
     color: "#63cab7",
-    cert: "/public/assets/certificate/foss-hack-2026.png",
+    cert: "/assets/Certificate/foss-hack-2026.png",
     desc: "Won FOSS Hack 2026 for building and presenting DOCKFLEET.",
   },
   {
@@ -1163,7 +1163,7 @@ const achievements = [
     org: "XIM University ACM",
     year: 2025,
     color: "#63cab7",
-    cert: "/public/assets/certificate/XIM-har-ghar-tiranga.png",
+    cert: "/assets/Certificate/XIM-har-ghar-tiranga.png",
     desc: "Won 2nd place in Code Tiranga at XIM University ACM.",
   },
   {
@@ -1173,7 +1173,7 @@ const achievements = [
     org: "XIM University ACM",
     year: 2024,
     color: "#e08a5c",
-    cert: "/public/assets/certificate/CSS Styling Event XIM.png",
+    cert: "assets/Certificate/CSS Styling Event XIM.png",
     desc: "Participated in Web Styledown focused on web design and styling.",
   },
   {
@@ -1183,7 +1183,7 @@ const achievements = [
     org: "CODEIGNITER-2025, Delhi Technical Campus",
     year: 2025,
     color: "#e08a5c",
-    cert: "/public/assets/certificate/Codeigniter excellence coding.jpg",
+    cert: "assets/Certificate/Codeigniter excellence coding.jpg",
     certificate: "/public/assets/certificate/Codeigniter excellence coding.jpg",
     desc: "Team achievement at a coding competition with 200+ participants.",
   },
@@ -1194,7 +1194,7 @@ const achievements = [
     org: "Forage",
     year: 2026,
     color: "#63cab7",
-    cert: "/public/assets/certificate/BCG X - Introduction to Data for Decision Makers Job.png",
+    cert: "assets/Certificate/BCG X - Introduction to Data for Decision Makers Job.png",
     desc: "Completed BCG's Introduction to Data for Decision Makers job simulation on Forage, focused on data analysis and Microsoft Excel.",
   },
   {
@@ -1204,7 +1204,7 @@ const achievements = [
     org: "Forage",
     year: 2026,
     color: "#e08a5c",
-    cert: "/public/assets/certificate/deloitte - certificate.png",
+    cert: "assets/Certificate/Deloitte - Certificate.png",
     desc: "Completed Deloitte Australia's Data Analytics job simulation on Forage, focused on data analysis and Tableau.",
   },
   {
@@ -1214,7 +1214,7 @@ const achievements = [
     org: "Tata via Forage",
     year: 2025,
     color: "#e08a5c",
-    cert: "/public/assets/certificate/tata - certificate.png",
+    cert: "assets/Certificate/tata - certificate.png",
     desc: "Completed a virtual job simulation analysing real business data and creating impactful dashboards.",
   },
     {
@@ -1224,7 +1224,7 @@ const achievements = [
     org: "IGDTUW",
     year: 2024,
     color: "#9b7ee8",
-    cert: "/public/assets/certificate/Innovertex2.0.png",
+    cert: "assets/Certificate/Innovertex2.0.png",
     desc: "Selected as finalist among 100+ teams for a school website redesign challenge.",
   },
   {
@@ -1234,7 +1234,7 @@ const achievements = [
     org: "Intel Digital Readiness / CBSE",
     year: 2021,
     color: "#e06c9b",
-    cert: "/public/assets/certificate/intel - crop_recommender.png",
+    cert: "assets/Certificate/intel - crop_recommender.png",
     desc: "Completed the AI for Youth Program and built a crop recommender model to help farmers predict suitable crops using soil and weather-related factors.",
   },
   {
