@@ -1153,7 +1153,7 @@ const achievements = [
     org: "FOSS Hack",
     year: 2026,
     color: "#63cab7",
-    cert: "/assets/Certificate/foss-hack-2026.png",
+    cert: "assets/Certificate/foss-hack-2026.PNG",
     desc: "Won FOSS Hack 2026 for building and presenting DOCKFLEET.",
   },
   {
@@ -1163,7 +1163,7 @@ const achievements = [
     org: "XIM University ACM",
     year: 2025,
     color: "#63cab7",
-    cert: "/assets/Certificate/XIM-har-ghar-tiranga.png",
+    cert: "assets/Certificate/XIM-har-ghar-tiranga.png",
     desc: "Won 2nd place in Code Tiranga at XIM University ACM.",
   },
   {
@@ -1194,7 +1194,7 @@ const achievements = [
     org: "Forage",
     year: 2026,
     color: "#63cab7",
-    cert: "assets/Certificate/BCG X - Introduction to Data for Decision Makers Job.png",
+    cert: "/assets/Certificate/BCG X - Introduction to Data for Decision Makers Job.PNG",
     desc: "Completed BCG's Introduction to Data for Decision Makers job simulation on Forage, focused on data analysis and Microsoft Excel.",
   },
   {
@@ -1204,7 +1204,7 @@ const achievements = [
     org: "Forage",
     year: 2026,
     color: "#e08a5c",
-    cert: "assets/Certificate/Deloitte - Certificate.png",
+    cert: "assets/Certificate/Deloitte - Certificate.PNG",
     desc: "Completed Deloitte Australia's Data Analytics job simulation on Forage, focused on data analysis and Tableau.",
   },
   {
@@ -1214,7 +1214,7 @@ const achievements = [
     org: "Tata via Forage",
     year: 2025,
     color: "#e08a5c",
-    cert: "assets/Certificate/tata - certificate.png",
+    cert: "assets/Certificate/tata - certificate.PNG",
     desc: "Completed a virtual job simulation analysing real business data and creating impactful dashboards.",
   },
     {
